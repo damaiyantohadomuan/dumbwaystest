@@ -1,0 +1,29 @@
+* Membuat Tabel cities
+CREATE TABLE cities(
+    id VARCHAR (20) PRIMARY KEY AUTO INCREMENT,
+    name VARCHAR (20)   
+);
+
+* Membuat Tabel biodata
+CREATE TABLE biodata(
+    id VARCHAR(20) PRIMARY KEY AUTO INCREMENT,
+    full_name VARCHAR (20),
+    date_of_birth DATE,
+    FOREIGN KEY(place_of _birth_id) REFERENCES cities(id),
+    phone_number VARCHAR(20),
+    address TEXT,
+    last_education ENUM('SD','SMP','SMA','S1'),
+    religion ENUM('Islam','Kristen','Katolik'),
+    hobby ENUM('Renang','Mancing','Game','Gibah',Progamming')
+);
+
+* Mengisi data ke table cities 
+INSERT INTO cities VALUES ('1301150061','Damaiyanto Hadomuan);
+* Mengisi data ke table biodata
+INSERT INTO cities VALUES ('1301150061','Damaiyanto Hadomuan','1996-12-11','089636153830','helloworld','SD','Islam','Renang');
+*Menampilkan list biodata beserta tempat lahir (yang merupakan relasi dari biodata dan city)
+*Mengedit data biodata berdasarkan id biodata
+UPDATE biodata SET full_name = 'damai' WHERE id='1301150061';
+*Menghapus data biodata berdasarkan id biodata
+DELETE FROM biodata WHERE id='1301150061';
+
